@@ -11,11 +11,22 @@
 
     <title>Формула драйва</title>
 
+    <style type="text/css">
+        .logo:hover {
+            background: no-repeat #c03;
+        }
+        .logo {
+            transition: background 0.5s ease;
+            background: no-repeat #aaa;
+            background-size: 300px 300px;
+        }
+    </style>
+
     <!-- Bootstrap Core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/css/full-width-pics.css" rel="stylesheet">
+    <link href="bootstrap/css/full-width-pics.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,7 +74,11 @@
     <!-- Full Width Image Header with Logo -->
     <!-- Image backgrounds are set within the full-width-pics.css file. -->
     <header class="image-bg-fluid-height">
-        <img class="img-responsive img-center" src="https://lh5.ggpht.com/vNDrJCej13fvs5Fh-G9LbhvnI0wOI4zJUMSHZdi0MyB2Shd9Ij1FrPckicnvoYUQrZCa=w300-rw" alt="">
+        <!--<img class="img-responsive img-center" src="http://placehold.it/200x200&text=Logo" alt="">-->
+        <!--<a class="logo" rel="home" href="/">-->
+            <!--<span>DRIVE2.RU</span>-->
+        <!--</a>-->
+        <img class="logo" src="svg/logo.svg" alt="Drive2.ru" style="width: 350px; height: 150px;">
     </header>
 
     <!-- Content Section -->
@@ -112,10 +127,10 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="bootstrap/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 

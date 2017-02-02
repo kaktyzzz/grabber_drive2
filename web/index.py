@@ -13,6 +13,6 @@ def index():
 
 @route('/<filename:path>')
 def bootstrap(filename):
-    return static_file(filename, root='bootstrap')
+    return static_file(filename, root='')
 
 run(host='localhost', port=8080)
