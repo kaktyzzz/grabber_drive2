@@ -2,7 +2,7 @@
 import requests
 import pandas
 import lxml.html as lh
-from time import gmtime, strftime, time
+from time import gmtime, strftime, time, sleep
 import os.path
 
 batch = 1000
@@ -27,7 +27,14 @@ i = 0
 
 while True:
     start = time()
-    r = requests.get('https://www.drive2.ru/random/')
+
+    try:
+        r = requests.get('https://www.drive2.ru/random/')
+    except requests.exceptions.ConnectionError:
+        print 'Connection refused, sleep 10s'
+        sleep(500)
+        continue
+
     doc = lh.fromstring(r.text)
 
     data = {}
@@ -61,8 +68,3 @@ while True:
         i = 0
         print "save %s - %f s per one" % (batch, sum(time_prof) / batch)
         time_prof = []
-
-
-
-
-
