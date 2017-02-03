@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from bottle import route, run, template, static_file
 
-
-
 @route('/hello/<name>')
 def test(name):
     return template('<b>Hello {{name}}</b>!', name=name)
@@ -15,4 +13,4 @@ def index():
 def bootstrap(filename):
     return static_file(filename, root='')
 
-# run(host='localhost', port=8080)
+run(host='localhost', port=8080)
