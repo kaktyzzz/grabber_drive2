@@ -19,6 +19,11 @@
             transition: background 0.5s ease;
             background: no-repeat #aaa;
             background-size: 300px 300px;
+            width: 350px;
+            height: 150px;
+        }
+        .math-tex{
+            visibility: hidden;
         }
     </style>
 
@@ -34,6 +39,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
 
 </head>
 
@@ -78,7 +85,7 @@
         <!--<a class="logo" rel="home" href="/">-->
             <!--<span>DRIVE2.RU</span>-->
         <!--</a>-->
-        <img class="logo" src="svg/logo.svg" alt="Drive2.ru" style="width: 350px; height: 150px;">
+        <img class="logo" src="svg/logo.svg" alt="Drive2.ru">
     </header>
 
     <!-- Content Section -->
@@ -87,8 +94,16 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="section-heading">{{name}}</h1>
-                    <p class="lead section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p class="section-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+                    <p class="lead section-lead math-tex">
+                        На данный момент обработано ${{count}}$ автомобилей.
+                        <br>
+                        Метрики математичекой модели: $r^2 = {{r2}};$  $MeanAbsErr = {{mae}}$.
+                        $$ {{followers}} F + {{bj_likes}} BL + {{likes}} L + {{comments}} C + {{other}} O \Rightarrow Drive .$$
+                    </p>
+                    <p class="section-paragraph math-tex">
+                        Слева представлены факторы, которые учитывает модель, а коэффициенты перед ними - веса соответствующего фактора: $F$ - количество подписчиков, $BL$ - количество лайков в БЖ,
+                        $L$ - количество лайков, $C$ - количество комментариев в БЖ, $O$ - другие факторы, среди которых - кол-во коментариев, кол-во записей в БЖ,
+                    </p>
                 </div>
             </div>
         </div>
@@ -131,6 +146,18 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        MathJax.Hub.Queue(function () {
+            $.each($('.math-tex'), function(i, val) {
+                $(val).css('visibility', 'visible');
+            });
+        });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
 
 </body>
 
