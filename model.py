@@ -9,7 +9,7 @@ from sklearn import cross_validation
 from sklearn.metrics import mean_absolute_error, r2_score
 
 models_dir = 'models'
-metrics_dir = os.path.join(models_dir)
+metrics_dir = os.path.join(models_dir, 'metrics')
 
 
 def load_model(filename='', fast=True):
@@ -72,5 +72,3 @@ print '---' * 10
 print ''
 
 save_model(fit, mae, r2, f_i_zipped, len(data))
-mae, r2, features, size = load_model()
-print size
